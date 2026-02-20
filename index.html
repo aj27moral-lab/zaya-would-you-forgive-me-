@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apology</title>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(to bottom, #0b1d3a, #102a54);
+        font-family: Arial, sans-serif;
+        overflow: hidden;
+        color: white;
+    }
+
+    /* Rain effect */
+    .rain {
+        position: fixed;
+        width: 2px;
+        height: 100px;
+        background: rgba(255, 255, 255, 0.2);
+        animation: rainFall linear infinite;
+    }
+
+    @keyframes rainFall {
+        from {
+            transform: translateY(-100px);
+        }
+        to {
+            transform: translateY(100vh);
+        }
+    }
+
+    .card {
+        background: rgba(255, 255, 255, 0.08);
+        padding: 40px;
+        border-radius: 12px;
+        backdrop-filter: blur(6px);
+        max-width: 500px;
+        text-align: center;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    h1 {
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+
+    p {
+        font-size: 15px;
+        line-height: 1.6;
+        margin-bottom: 15px;
+        color: #e0e6f0;
+    }
+
+    img {
+        width: 120px;
+        margin: 15px 0;
+        border-radius: 8px;
+    }
+
+    button {
+        margin-top: 15px;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 6px;
+        background: #2d6cdf;
+        color: white;
+        font-size: 14px;
+        cursor: pointer;
+        transition: 0.2s;
+    }
+
+    button:hover {
+        background: #1f4fa8;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="card">
+    <h1>I Want to Apologize</h1>
+
+    <p>
+        I sincerely apologize if I made you uncomfortable.
+        That was not my intention.
+    </p>
+
+    <p>
+        Би чамайг хүндэлдэг.  
+        (I respect you.)
+    </p>
+
+    <p>
+        Сэтгэл минь үнэхээр уучлал гуйж байна.  
+        (I am genuinely asking for forgiveness.)
+    </p>
+
+    <!-- Crying GIF (replace src with any GIF you prefer) -->
+    <img src="https://media.giphy.com/media/ROF8OQvDmxytW/giphy.gif" alt="Crying GIF">
+
+    <p>
+        If you are willing, I would appreciate being unblocked.
+        No pressure. I just wanted to apologize properly and respectfully.
+    </p>
+
+    <button onclick="alert('Thank you for reading.')">
+        Acknowledge
+    </button>
+</div>
+
+<script>
+    function createRain() {
+        const rain = document.createElement("div");
+        rain.classList.add("rain");
+        rain.style.left = Math.random() * 100 + "vw";
+        rain.style.animationDuration = (Math.random() * 0.5 + 0.5) + "s";
+        document.body.appendChild(rain);
+
+        setTimeout(() => {
+            rain.remove();
+        }, 2000);
+    }
+
+    setInterval(createRain, 50);
+</script>
+
+</body>
+</html>
